@@ -3,29 +3,28 @@
 
 var cargarPagina = function () {
 	//obtener elementos
-	var btn = document.getElementById('agregar');
+	var btn = $('#agregar');
 	//funcionalidad 
-	btn.addEventListener('click',imprimir);
-
-
-	
+	btn.click(imprimir);
 }
-function imprimir(e){
-	e.preventDefault();
-// obtener elementos
-var lienzo = document.getElementById('lienzo');
-var txtMensaje = document.getElementById('mensaje');
-//crear elementos
-var parrafo = document.createElement('p');
-//estilos a los elementos 
-parrafo.className = 'jumbotron';
-//agregar elementos 
-parrafo.innerText = txtMensaje.value;
-//agregar 
-lienzo.appendChild(parrafo);
+	function imprimir(e){
+		e.preventDefault();
+	// obtener elementos
+	var lienzo = $('#lienzo');
+	var txtMensaje = $('#mensaje');
+	//crear elementos
+	// $(dondeInserta).append("<p class='jumbotron'>");
+	var parrafo = $('<p />');
+	//estilos a los elementos 
+	parrafo.addClass('jumbotron')
+	//agregar elementos 
+	parrafo.text(txtMensaje.val());
+	//agregar 
+	lienzo.append(parrafo);
 
-txtMensaje.value = "";
+	txtMensaje.val("");
 
 }
 
-window.addEventListener('load',cargarPagina);
+// window.addEventListener('load',cargarPagina);
+$(document).ready(cargarPagina);
