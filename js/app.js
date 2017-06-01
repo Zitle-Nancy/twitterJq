@@ -1,6 +1,3 @@
-// alert('hola');
-// var lienzo =  document.getElementById('')
-
 var cargarPagina = function () {
 	//obtener elementos
 	var btn = $('#agregar');
@@ -13,7 +10,10 @@ var cargarPagina = function () {
 	var lienzo = $('#lienzo');
 	var txtMensaje = $('#mensaje');
 	//crear elementos
+<<<<<<< HEAD
 	// $(dondeInserta).append("<p class='jumbotron'>");
+=======
+>>>>>>> 2d543927f3f35c3447ba7a76d927d5a80c2b290f
 	var parrafo = $('<p />');
 	//estilos a los elementos 
 	parrafo.addClass('jumbotron')
@@ -21,10 +21,16 @@ var cargarPagina = function () {
 	parrafo.text(txtMensaje.val());
 	//agregar 
 	lienzo.append(parrafo);
+<<<<<<< HEAD
 
 	txtMensaje.val("");
 
 }
 
 // window.addEventListener('load',cargarPagina);
+=======
+	txtMensaje.val("");
+
+}
+>>>>>>> 2d543927f3f35c3447ba7a76d927d5a80c2b290f
 $(document).ready(cargarPagina);
