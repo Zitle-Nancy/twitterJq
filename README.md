@@ -1,13 +1,9 @@
-<<<<<<< HEAD
-# trelloV2
-Creacion de trello version 2
+
+# Creacion de twitter con Jquery
+
 ## Objetivos
 
-* Usar el DOM 
-* Practicar js
-* Uso de Framework, en nuestro caso bootstrap
+* Traducir javaScript a Jquery
+* Usar un Framework para su diseño (bootstrap)
 
-=======
-# twitterJq
-Creacion de twitter con Jquery
->>>>>>> 92ea2895229fe79e969189156d4133b783d65c66
+
