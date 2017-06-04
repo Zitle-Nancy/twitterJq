@@ -32,14 +32,20 @@ var contador = 0;
 		var boton = $(this).parent().siblings().first();
 		var txtComentario = $(this);
 		var contar = txtComentario.val().length;
+		console.log(contar);
 		var restaCaracteres = 140 - contar;
 		var contadorLetras = $('#contador-letras');
 		contadorLetras.html("Total de Caracteres: " + restaCaracteres);
-		if(txtComentario.val().trim().length < 0 || txtComentario.val().length > 140 ){
+		if(txtComentario.val().trim().length <= 0 || txtComentario.val().length > 140 ){
 			boton.attr('disabled',true);
 		}else{
 			boton.removeAttr('disabled');
+<<<<<<< HEAD
+=======
+			// txtComentario.length = 0;
+>>>>>>> bfe50b647f352203e2105a2d0e434513cbeaf7df
 		}
+
 	}
 
 $(document).ready(cargarPagina);
