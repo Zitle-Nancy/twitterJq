@@ -52,6 +52,11 @@ var contador = 0;
 		var cajaTexto = $('#mensaje').val().length;
 		console.log(cajaTexto);
 		switch(cajaTexto){
+			case 119:
+			labelLetras.removeClass('color-uno');
+			labelLetras.removeClass('color-dos');
+			labelLetras.removeClass('color-tres');
+			break;
 			case 120:
 			labelLetras.addClass('color-uno');
 			labelLetras.removeClass('color-dos');
