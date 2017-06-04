@@ -1,47 +1,15 @@
-
 var contador = 0;
-var contadorLetras = 140;
-var cargarPagina = function () {
-	//obtener elementos
-	// $('#mensaje').keyup(desabilitarBtn);
-	$('#agregar').click(imprimir,desabilitarBtn);
-}
-
+	var cargarPagina = function () {
+		//obtener elementos
+		$('#mensaje').keyup(desabilitarBtn);
+		$('#agregar').click(imprimir);
+	}
 	var imprimir = function(e){
 		e.preventDefault();
-<<<<<<< HEAD
-	// obtener elementos
-	var lienzo = $('#lienzo');
-	var txtMensaje = $('#mensaje');
-	//crear elementos
-<<<<<<< HEAD
-	// $(dondeInserta).append("<p class='jumbotron'>");
-=======
->>>>>>> 2d543927f3f35c3447ba7a76d927d5a80c2b290f
-	var parrafo = $('<p />');
-	//estilos a los elementos 
-	parrafo.addClass('jumbotron')
-	//agregar elementos 
-	parrafo.text(txtMensaje.val());
-	//agregar 
-	lienzo.append(parrafo);
-<<<<<<< HEAD
-
-	txtMensaje.val("");
-
-}
-
-// window.addEventListener('load',cargarPagina);
-=======
-	txtMensaje.val("");
-
-}
->>>>>>> 2d543927f3f35c3447ba7a76d927d5a80c2b290f
-=======
 		//quiero que texto reciba a textarea
 		//eq(1) te da el elemento que tiene ese indice
 		var texto = $(this).prev().children().eq(1); 
-		console.log(texto);
+		// console.log(texto);
 		//crear variables
 		var identificador = 'parrafo' + contador; 
 		// obtener elementos
@@ -59,21 +27,20 @@ var cargarPagina = function () {
 		contador++;
 		console.log('de boton' + contador);
 	}
-
-	var desabilitarBtn = function(e){
-		// console.log(this);
-		e.preventDefault();
-		var txtComentario = $(this).prev().children().next();
-		console.log(txtComentario.val());
-		if(txtComentario.val() == ""){
-			console.log('blanco');
+	var desabilitarBtn = function(){
+		// obtener el boton de agregar para cambiar su atributo
+		var boton = $(this).parent().siblings().first();
+		var txtComentario = $(this);
+		var contar = txtComentario.val().length;
+		var restaCaracteres = 140 - contar;
+		var contadorLetras = $('#contador-letras');
+		contadorLetras.html("Total de Caracteres: " + restaCaracteres);
+		if((txtComentario.val().trim().length) > 0){
+			boton.removeAttr('disabled');
 		}else{
-			console.log('texto');
+			//el boton estara desactivado
+			boton.attr('disabled',true);
 		}
-		
-
 	}
 
-
->>>>>>> 7c93a990ca71d5a12141c54dabddc0323be0d6c5
 $(document).ready(cargarPagina);
