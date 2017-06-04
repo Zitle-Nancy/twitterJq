@@ -32,7 +32,6 @@ var contador = 0;
 		var boton = $(this).parent().siblings().first();
 		var txtComentario = $(this);
 		var contar = txtComentario.val().length;
-<<<<<<< HEAD
 		console.log(contar);
 		var restaCaracteres = 140 - contar;
 		var contadorLetras = $('#contador-letras');
@@ -44,17 +43,6 @@ var contador = 0;
 			// txtComentario.length = 0;
 		}
 
-=======
-		var restaCaracteres = 140 - contar;
-		var contadorLetras = $('#contador-letras');
-		contadorLetras.html("Total de Caracteres: " + restaCaracteres);
-		if(txtComentario.val().trim().length < 0 || txtComentario.val().length > 140 ){
-			boton.attr('disabled',true);
-		}else{
-			boton.removeAttr('disabled');
-		
-		}
->>>>>>> 2b3ed4c719c465d2b2c74ae164ead9d218d81d6f
 	}
 
 $(document).ready(cargarPagina);
