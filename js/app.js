@@ -2,6 +2,7 @@ var contador = 0;
 	var cargarPagina = function () {
 		//obtener elementos
 		$('#mensaje').keyup(desabilitarBtn);
+		$('#mensaje').keyup(letrasColor);
 		$('#agregar').click(imprimir);
 	}
 	var imprimir = function(e){
@@ -41,9 +42,31 @@ var contador = 0;
 		}else{
 			boton.removeAttr('disabled');
 			// txtComentario.length = 0;
-
 		}
 
 	}
 
+	var letrasColor = function(){
+		var labelLetras = $('#contador-letras');
+		// console.log(labelLetras);
+		var cajaTexto = $('#mensaje').val().length;
+		console.log(cajaTexto);
+		switch(cajaTexto){
+			case 120:
+			labelLetras.addClass('color-uno');
+			labelLetras.removeClass('color-dos');
+			labelLetras.removeClass('color-tres');
+			break;
+			case 130: 
+			labelLetras.addClass('color-dos');
+			labelLetras.removeClass('color-uno');
+			labelLetras.removeClass('color-tres');
+			break;
+			case 140:
+			labelLetras.addClass('color-tres');
+			labelLetras.removeClass('color-dos');
+			labelLetras.removeClass('color-uno');
+			break;
+		}
+	}
 $(document).ready(cargarPagina);
