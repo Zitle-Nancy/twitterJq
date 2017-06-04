@@ -40,10 +40,8 @@ var contador = 0;
 			boton.attr('disabled',true);
 		}else{
 			boton.removeAttr('disabled');
-<<<<<<< HEAD
-=======
 			// txtComentario.length = 0;
->>>>>>> bfe50b647f352203e2105a2d0e434513cbeaf7df
+
 		}
 
 	}
