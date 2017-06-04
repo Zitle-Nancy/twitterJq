@@ -39,7 +39,6 @@ var contador = 0;
 			boton.attr('disabled',true);
 		}else{
 			boton.removeAttr('disabled');
-		
 		}
 	}
 
