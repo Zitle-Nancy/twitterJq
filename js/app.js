@@ -35,11 +35,11 @@ var contador = 0;
 		var restaCaracteres = 140 - contar;
 		var contadorLetras = $('#contador-letras');
 		contadorLetras.html("Total de Caracteres: " + restaCaracteres);
-		if((txtComentario.val().trim().length) > 0){
-			boton.removeAttr('disabled');
-		}else{
-			//el boton estara desactivado
+		if(txtComentario.val().trim().length < 0 || txtComentario.val().length > 140 ){
 			boton.attr('disabled',true);
+		}else{
+			boton.removeAttr('disabled');
+		
 		}
 	}
 
