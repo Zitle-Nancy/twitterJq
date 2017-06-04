@@ -3,9 +3,10 @@ var contador = 0;
 var contadorLetras = 140;
 var cargarPagina = function () {
 	//obtener elementos
-	$('#mensaje').keyup(desabilitarBtn);
-	$('#agregar').click(imprimir);
+	// $('#mensaje').keyup(desabilitarBtn);
+	$('#agregar').click(imprimir,desabilitarBtn);
 }
+
 	var imprimir = function(e){
 		e.preventDefault();
 		//quiero que texto reciba a textarea
@@ -20,25 +21,27 @@ var cargarPagina = function () {
 		var parrafo = $("<p />", { "class": "jumbotron" });
 		console.log(parrafo);
 		//estilos a los elementos 
-		// parrafo.addClass('jumbotron')
 		parrafo.attr("id",identificador);
 		//agregar elementos 
 		parrafo.text(texto.val());
-		//agregar 
+		//agregar al html
 		lienzo.append(parrafo);
 		texto.val("");
 		contador++;
 		console.log('de boton' + contador);
 	}
 
-	var desabilitarBtn = function(){
-		contadorLetras --;
-		if(contadorLetras >= 1){
-			btn.removeClass('disabled');
+	var desabilitarBtn = function(e){
+		// console.log(this);
+		e.preventDefault();
+		var txtComentario = $(this).prev().children().next();
+		console.log(txtComentario.val());
+		if(txtComentario.val() == ""){
+			console.log('blanco');
 		}else{
-			btn.addClass('disabled');
+			console.log('texto');
 		}
-		console.log('este de letras' + contadorLetras);
+		
 
 	}
 
