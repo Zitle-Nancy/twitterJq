@@ -1,18 +1,15 @@
-
 var contador = 0;
-var contadorLetras = 140;
-var cargarPagina = function () {
-	//obtener elementos
-	// $('#mensaje').keyup(desabilitarBtn);
-	$('#agregar').click(imprimir,desabilitarBtn);
-}
-
+	var cargarPagina = function () {
+		//obtener elementos
+		$('#mensaje').keyup(desabilitarBtn);
+		$('#agregar').click(imprimir);
+	}
 	var imprimir = function(e){
 		e.preventDefault();
 		//quiero que texto reciba a textarea
 		//eq(1) te da el elemento que tiene ese indice
 		var texto = $(this).prev().children().eq(1); 
-		console.log(texto);
+		// console.log(texto);
 		//crear variables
 		var identificador = 'parrafo' + contador; 
 		// obtener elementos
@@ -30,20 +27,22 @@ var cargarPagina = function () {
 		contador++;
 		console.log('de boton' + contador);
 	}
-
-	var desabilitarBtn = function(e){
-		// console.log(this);
-		e.preventDefault();
-		var txtComentario = $(this).prev().children().next();
-		console.log(txtComentario.val());
-		if(txtComentario.val() == ""){
-			console.log('blanco');
+	var desabilitarBtn = function(){
+		// obtener el boton de agregar para cambiar su atributo
+		var boton = $(this).parent().siblings().first();
+		var txtComentario = $(this);
+		var contar = txtComentario.val().length;
+		console.log(contar);
+		var restaCaracteres = 140 - contar;
+		var contadorLetras = $('#contador-letras');
+		contadorLetras.html("Total de Caracteres: " + restaCaracteres);
+		if(txtComentario.val().trim().length <= 0 || txtComentario.val().length > 140 ){
+			boton.attr('disabled',true);
 		}else{
-			console.log('texto');
+			boton.removeAttr('disabled');
+			// txtComentario.length = 0;
 		}
-		
 
 	}
-
 
 $(document).ready(cargarPagina);
